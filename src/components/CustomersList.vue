@@ -4,7 +4,9 @@
             <li class="list-unstyled-item" 
                 v-for="(customer, key) in customers" 
                 :key="customer.id">
-                {{ customer.firstName }} {{ customer.lastName }} <a href="#" @click="deleteCustomer(customer)">
+                {{ customer.firstName }} {{ customer.lastName }}
+                <router-link :to="'/customers/' + customer.id" class="btn btn-link">Latest Purchases</router-link>
+                 <a href="#" @click="deleteCustomer(customer)">
                     <small style="color: red">Delete</small>
                 </a>
             </li>
