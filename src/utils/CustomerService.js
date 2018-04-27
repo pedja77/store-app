@@ -8,6 +8,8 @@ const customers = [
     { id: 7, firstName: 'Franci', lastName: 'Blaskovic', email: 'b@p.p', purchasedProducts: []}
 ]
 
+let nextId = 8
+
 
 export default class CustomerService {
 
@@ -17,6 +19,12 @@ export default class CustomerService {
 
     deleteCustomer(customer) {
         customers.splice(customers.indexOf(customer), 1)
+    }
+
+    addCustomer(customer) {
+        customer.id = nextId
+        customers.push(customer)
+        nextId++
     }
 }
 
