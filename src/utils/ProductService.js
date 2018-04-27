@@ -12,6 +12,10 @@ export default class ProductService {
     getProducts() {
         return products
     }
+
+    filterProducts(term) {
+        return products.filter(term => products.title.toLowerCase().startsWith(term.toLowerCase()))
+    }
 }
 
 export const productService = new ProductService()

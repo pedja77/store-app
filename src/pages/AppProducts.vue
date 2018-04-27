@@ -1,6 +1,9 @@
 <template>
   <div class="container">
       <h2>Products</h2>
+      <form>
+          <input type="text" placeholder="Filter products" v-model="searchTerm"/>
+      </form>
        <table>
             <thead>
                 <th>Product Name</th>
@@ -20,7 +23,13 @@ import { productService } from '../utils/ProductService'
 export default {
     data() {
         return {
-            products: productService.getProducts()
+            products: productService.getProducts(),
+            searchTerm: ''
+        }
+    },
+    computed: {
+        filterProducts(searchTerm) {
+            return productService.filterProducts(searchTerm)
         }
     }
 }
