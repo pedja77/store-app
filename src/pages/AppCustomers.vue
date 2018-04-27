@@ -1,11 +1,15 @@
 <template>
   <div>
-      Customers
+      <CustomersList />
   </div>
 </template>
 
 <script>
-export default {
+import CustomersList from '../components/CustomersList.vue'
 
+export default {
+    components: {
+        CustomersList
+    }
 }
 </script>
