@@ -8,8 +8,8 @@
                 <th>Product Name</th>
                 <th>Quantity</th>
             </thead>
-            <tr v-for="(product, key) in customer.products" :key="product.id">
-                <td>{{ product.name }}</td>
+            <tr v-for="product in customer.products" :key="product.id">
+                <td>{{ product.title }}</td>
                 <td>{{ product.quantity }}</td>
             </tr>
         </table>
