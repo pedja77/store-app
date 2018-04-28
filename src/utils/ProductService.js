@@ -14,7 +14,7 @@ export default class ProductService {
     }
 
     filterProducts(term) {
-        return products.filter(term => products.title.toLowerCase().startsWith(term.toLowerCase()))
+        return products.filter(product => product.title.toLowerCase().startsWith(term))
     }
 }
 

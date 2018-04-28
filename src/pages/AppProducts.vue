@@ -2,7 +2,7 @@
   <div class="container">
       <h2>Products</h2>
       <form>
-          <input type="text" placeholder="Filter products" v-model="searchTerm"/>
+          <input type="text" placeholder="Filter products" v-model="searchTerm"/> 
       </form>
        <table>
             <thead>
@@ -14,6 +14,7 @@
                 <td>{{ product.qty }}</td>
             </tr>
         </table>
+        {{ filterProducts }}
   </div>
 </template>
 
@@ -28,8 +29,9 @@ export default {
         }
     },
     computed: {
-        filterProducts(searchTerm) {
-            return productService.filterProducts(searchTerm)
+        filterProducts: function() {
+            //console.log(this.searchTerm)
+            this.products = productService.filterProducts(this.searchTerm)
         }
     }
 }
