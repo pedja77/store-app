@@ -9,6 +9,7 @@
                 <th>Product Name</th>
                 <th>Quantity</th>
                 <th>Change quantity</th>
+                <th>&nbsp;</th>
             </thead>
             <tr v-for="product in products" :key="product.id">
                 <td>{{ product.title }}</td>
@@ -17,6 +18,7 @@
                     <button class="btn btn-link" @click="incrementQty(product.id)">+</button>
                     <button class="btn btn-link" @click="decrementQty(product.id)" v-if="product.qty > 0">-</button>
                 </td>
+                <td><router-link :to="'/products/' + product.id">Buy this product</router-link></td>
             </tr>
         </table>
         {{ filterProducts }}

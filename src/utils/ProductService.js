@@ -23,8 +23,12 @@ export default class ProductService {
     }
 
     decrementQty(id) {
-        let product = products.find(product => product.id == id)
+        let product = this.get(id)
         product.qty--
+    }
+
+    get(id) {
+        return products.find(product => product.id == id)
     }
 }
 

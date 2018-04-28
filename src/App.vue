@@ -10,6 +10,7 @@ import AppCustomers from './pages/AppCustomers.vue'
 import AppProducts from './pages/AppProducts.vue'
 import Navbar from './components/Navbar.vue'
 import AppLatestPurchases from './pages/AppLatestPurchases.vue'
+import AppProduct from './pages/AppProduct'
 
 export default {
   name: 'app',
@@ -17,7 +18,8 @@ export default {
     AppCustomers,
     AppProducts,
     Navbar,
-    AppLatestPurchases  
+    AppLatestPurchases,
+    AppProduct
   }
 }
 </script>

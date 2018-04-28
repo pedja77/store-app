@@ -29,6 +29,11 @@ export default class CustomerService {
     get(id) {
         return customers.find(customer => id == customer.id)
     }
+
+    addProduct(product, customerId) {
+        let customer = this.get(customerId)
+        customer.products.push(product)
+    }
 }
 
 export const customerService = new CustomerService()
