@@ -16,6 +16,16 @@ export default class ProductService {
     filterProducts(term) {
         return products.filter(product => product.title.toLowerCase().startsWith(term))
     }
+
+    incrementQty(id) {
+        let product = products.find(product => product.id == id)
+        product.qty++
+    }
+
+    decrementQty(id) {
+        let product = products.find(product => product.id == id)
+        product.qty--
+    }
 }
 
 export const productService = new ProductService()
